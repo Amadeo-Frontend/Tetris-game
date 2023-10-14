@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to right, #00dbde 0%, #fc00ff 100%);
+    background-size: 400% 400%;
+    color: #f2f2f2;
+    font-size: 2rem;
+    text-align: center;
+    animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+canvas {
+    height: 70vh;
+}
+
+.navbar {
+    height: 62px;
+    width: 100%;
+    position: fixed;
+    background-color: #111010;
+    top: 0;
+    left: 0;
+    opacity: 0.65;
+    text-align: center;
+}
+
+.logo-img {
+    z-index: 10;
+    position: fixed;
+    width: 150px;
+    margin-left: -80px;
+}
+
+.gamepad {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.control_1 {
+    height: 50px;
+    width: 50px;
+    border: 0px solid #111010;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+#arrow-right {
+    position: absolute;
+    margin-left: 90px;
+    font-size: 60px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#arrow-left {
+    position: absolute;
+    font-size: 60px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+.control_2 {
+    margin-top: -40px;
+    height: 50px;
+    width: 100%;
+    border: 0px solid #111010;
+    z-index: 9;
+}
+
+#pause_game {
+    position: absolute;
+    right: 70px;
+    margin-top: 9px;
+    font-size: 40px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#continue_game {
+    display: none;
+    position: absolute;
+    right: 77px;
+    margin-top: 15px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#rotate_piece {
+    position: absolute;
+    right: 30px;
+    margin-top: 0px;
+    font-size: 40px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#arrow-down {
+    position: absolute;
+    right: 120px;
+    margin-top: -5px;
+    font-size: 55px;
+    background: transparent;
+    border: none;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#start_game {
+    position: absolute;
+    right: 10px;
+    margin-top: 8px;
+    font-size: 40px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#restart_game {
+    position: absolute;
+    right: 10px;
+    margin-top: 8px;
+    font-size: 40px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#music_game {
+    position: absolute;
+    left: 90px;
+    margin-top: 15px;
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+#music_game {
+    opacity: 0.55;
+}
+
+#demo-img {
+    position: fixed;
+    height: 300px;
+    margin-left: -92px;
+    margin-top: 150px;
+    filter: drop-shadow(0 0 0.15rem black);
+}
+
+#gamepad_controls {
+    font-size: 30px;
+    background: transparent;
+    border: none;
+    z-index: 10;
+    outline-style: none;
+    cursor: pointer;
+    color: #424242;
+}
+
+.dropdown {
+    position: absolute;
+    left: 10px;
+    margin-top: 8px;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f2f2f2;
+    margin-top: 40px;
+    min-width: 150px;
+    height: 170px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0 0.5);
+    padding: 12px 16px;
+    z-index: 1;
+    color: #111010;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+#score {
+    border: opx solid #111010;
+    font-size: 24px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+}
+
+#levels {
+    border: 0px solid #111010;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    font-size: 16px;
+}
+
+@media all and (max-width: 800px) {
+    .dropdown {
+        display: none;
+    }
+
+    #music_game {
+        left: 10px;
+    }
+
+    #start_game {
+        margin-top: 70px;
+    }
+
+    #restart_game {
+        opacity: 0;
+    }
+
+    #pause_game {
+        right: 10px;
+    }
+
+    #continue_game {
+        right: 15px;
+    }
+}
+
+@media all and (min-width: 801px) {
+    .control_1 {
+        display: none;
+    }
+
+    .control_2 {
+        display: none;
+    }
+}
+
+@media all and (max-width: 500px) {
+    canvas {
+        height: 60vh;
+    }
+}
+
+@media all and (max-width: 350px) {
+    #rotate_piece {
+        font-size: 40px;
+    }
+
+    #arrow-down {
+        display: none;
+    }
+
+    #arrow-right {
+        font-size: 50px;
+    }
+
+    #arrow-left {
+        font-size: 50px;
+    }
+}

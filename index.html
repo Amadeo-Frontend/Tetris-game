@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tetris Game</title>
+    <link rel="shortcut icon" href="./images/icons.png" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <img
+      src="http://tetris.planetcode.fr/LogoTetrisVector.png"
+      alt="tetris"
+      loading="lazy"
+      class="logo-img"
+    />
+    <img
+      id="demo-img"
+      src="http://tetris.planetcode.fr/TetrisDemo.png"
+      alt="demo"
+      title="demo"
+    />
+    <div class="navbar">
+      <button id="start_game"><i class="far fa-play-circle"></i></button>
+      <button id="restart_game"><i class="far fa-play-circle"></i></button>
+      <audio id="myAudio" src="TetrisRangtime.mp3" preload="auto"></audio>
+      <button id="music_game" onclick="togglePlay()">
+        <i class="fas fa-music"></i>
+      </button>
+      <button id="pause_game"><i class="far fa-pause-circle"></i></button>
+      <button id="continue_game"><i class="fas fa-redo"></i></button>
+
+      <div class="dropdown">
+        <button id="gamepad_controls" class="dropdown">
+          <i class="fas fa-gamepad"></i>
+        </button>
+        <div class="dropdown-content">
+          <p style="margin-top: 0px">
+            <i class="fas fa-caret-right"></i>&nbsp;&nbsp;Mover p/ direita
+          </p>
+          <p style="margin-top: 0px">
+            <i class="fas fa-caret-left"></i>&nbsp;&nbsp;Mover p/ esquerda
+          </p>
+          <p style="margin-top: 0px">
+            <i class="fas fa-caret-down"></i>&nbsp;&nbsp;Mover p/ baixo
+          </p>
+          <p><span style="font-weight: bold">&nbsp;Ctrl</span>= Girar</p>
+        </div>
+      </div>
+    </div>
+    <div class="gamepad">
+      <div class="control_1">
+        <button id="arrow-right"><i class="fas fa-caret-right"></i></button>
+        <button id="arrow-left"><i class="fas fa-caret-left"></i></button>
+      </div>
+      <div class="control_2">
+        <button id="arrow-down"><i class="fas fa-caret-down"></i></button>
+        <button id="rotate_piece"><i class="fas fa-cubes"></i></button>
+      </div>
+    </div>
+    <br />
+    <br />
+    <div class="score"></div>
+    <p id="levels"></p>
+    <canvas id="tetris" width="240" height="400"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
