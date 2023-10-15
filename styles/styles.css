@@ -13,7 +13,7 @@ body {
     color: #f2f2f2;
     font-size: 2rem;
     text-align: center;
-    animation: gradient 15s ease infinite;
+    animation: gradient 150s ease infinite;
 }
 
 @keyframes gradient {
